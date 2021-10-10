@@ -8,6 +8,7 @@ function Slider() {
   const [data, setData] = useState([]);
   const [isFetching, setIsFetching] = useState(true);
   const [reFetch, setReFetch] = useState(false);
+  let [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -29,8 +30,24 @@ function Slider() {
 
   const dots = data.map((slide) => <Dot {...slide} key={slide.id} />);
 
-  const prevSlide = () => {};
-  const nextSlide = () => {};
+  const prevSlide = () => {
+    if (currentSlide === 0) {
+      setCurrentSlide(data.length - 1);
+    } else setCurrentSlide(currentSlide--);
+    goToSlide(currentSlide);
+  };
+
+  const nextSlide = () => {
+    if (currentSlide !== data.length - 1) setCurrentSlide(currentSlide++);
+    else setCurrentSlide(0);
+    goToSlide(currentSlide);
+  };
+
+  const goToSlide = () => {
+    document.querySelectorAll(".slide").forEach((s, index) => {
+      s.style.transform = `translateX(${120 * (index - currentSlide)}%)`;
+    });
+  };
 
   return (
     <section className="section" id="section--1">
