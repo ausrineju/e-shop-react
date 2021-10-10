@@ -29,12 +29,19 @@ function Slider() {
 
   const dots = data.map((slide) => <Dot {...slide} key={slide.id} />);
 
+  const prevSlide = () => {};
+  const nextSlide = () => {};
+
   return (
     <section className="section" id="section--1">
       <div className="slider">
         <div className="slider-row">{isFetching ? "Loading" : sliderList}</div>
-        <button className="slider__btn slider__btn--left">&larr;</button>
-        <button className="slider__btn slider__btn--right">&rarr;</button>
+        <button className="slider__btn slider__btn--left" onClick={prevSlide}>
+          &larr;
+        </button>
+        <button className="slider__btn slider__btn--right" onClick={nextSlide}>
+          &rarr;
+        </button>
         <div className="dots">{dots}</div>
       </div>
     </section>

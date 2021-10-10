@@ -2,7 +2,7 @@ function Slide(props) {
   return (
     <div
       className="slide"
-      style={{ transform: `translate(${120 * (0 - props.id)}}%)` }}
+      style={{ transform: `translate(${120 * Math.abs(0 - props.id)}%)` }}
     >
       <h2 className="slider__header">{props.brand}</h2>
       <img src={props.src} alt="Photo 1" />
