@@ -1,31 +1,31 @@
 {
   "slides": [
     {
-      "id": "shoes-0",
+      "id": "0",
       "src": "img/img-1.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
-      "id": "shoes-1",
+      "id": "1",
       "src": "img/img-2.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
-      "id": "shoes-2",
+      "id": "2",
       "src": "img/img-3.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
-      "id": "shoes-3",
+      "id": "3",
       "src": "img/img-4.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
-      "id": "shoes-4",
+      "id": "4",
       "src": "img/img-5.jpg",
       "brand": "Adidas",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
@@ -34,25 +34,25 @@
   "products": [
     {
       "id": "clothes-0",
-      "src": "img/clothes-1.jpg",
+      "src": "../img/clothes-1.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
       "id": "clothes-1",
-      "src": "img/clothes-2.jpg",
+      "src": "../img/clothes-2.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
       "id": "clothes-2",
-      "src": "img/clothes-3.jpg",
+      "src": "../img/clothes-3.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     },
     {
       "id": "clothes-3",
-      "src": "img/clothes-4.jpg",
+      "src": "../img/clothes-4.jpg",
       "brand": "Nike",
       "description": "Lorem ipsum lorem ipsum lorem ipsum"
     }
