@@ -30,33 +30,44 @@ function Slider() {
 
   const dots = data.map((slide) => <Dot {...slide} key={slide.id} />);
 
-  const prevSlide = () => {
-    if (currentSlide === 0) {
-      setCurrentSlide(data.length - 1);
-    } else setCurrentSlide(currentSlide--);
-    goToSlide(currentSlide);
-  };
+  const slideHandler = (e, direction) => {
+    e.preventDefault();
+    const slide = document.querySelectorAll(".slide");
 
-  const nextSlide = () => {
-    if (currentSlide !== data.length - 1) setCurrentSlide(currentSlide++);
-    else setCurrentSlide(0);
-    goToSlide(currentSlide);
-  };
+    if (direction === "prevSlide" && currentSlide !== 0) {
+      currentSlide--;
+    } else if (
+      direction === "nextSlide" &&
+      currentSlide !== sliderList.length - 1
+    ) {
+      currentSlide++;
+    } else currentSlide = 0;
 
-  const goToSlide = () => {
-    document.querySelectorAll(".slide").forEach((s, index) => {
+    slide.forEach((s, index) => {
       s.style.transform = `translateX(${120 * (index - currentSlide)}%)`;
     });
+
+    setCurrentSlide(currentSlide);
   };
 
   return (
     <section className="section" id="section--1">
       <div className="slider">
         <div className="slider-row">{isFetching ? "Loading" : sliderList}</div>
-        <button className="slider__btn slider__btn--left" onClick={prevSlide}>
+        <button
+          className="slider__btn slider__btn--left"
+          onClick={(e) => {
+            slideHandler(e, "prevSlide");
+          }}
+        >
           &larr;
         </button>
-        <button className="slider__btn slider__btn--right" onClick={nextSlide}>
+        <button
+          className="slider__btn slider__btn--right"
+          onClick={(e) => {
+            slideHandler(e, "nextSlide");
+          }}
+        >
           &rarr;
         </button>
         <div className="dots">{dots}</div>
