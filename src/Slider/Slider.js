@@ -25,9 +25,7 @@ function Slider() {
     fetchProducts();
   }, [reFetch]);
 
-  const sliderList = data.map((slide) => (
-    <Slide {...slide} key={slide.id} src={slide.src} />
-  ));
+  const sliderList = data.map((slide) => <Slide {...slide} key={slide.id} />);
 
   const dots = data.map((slide) => <Dot {...slide} key={slide.id} />);
 
